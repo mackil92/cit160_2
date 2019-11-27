@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /* Defining Table
+     *Input: a person's name
+     *Processing: create personalized greeting to show recommended content on page
+     *Out put: the greeting. 
+     */
+     function recommendationMessage() {
+        //Get the user's name from the textbox with id of userNameInput 
+        //and store it in the variable, name.
+        let name = document.getElementById('userNameInput').value;
+        //store the message template in to variable recommendTemplate
+        let recommendTemplate = "Hi, " + name + ". We think you would like these...";
+        //display the recommendation message in the div with id recommendDisplay
+        document.getElementById('recommendDisplay').innerHTML = recommendTemplate;
+     }
+    </script>
+</head>
+<body>
+    <input type="text" id="userNameInput">
+    <button type="button" onclick="recommendationMessage()">Click to proceed</button>
+    <div id="recommendDisplay"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function powersOfTwo() { 
+        /*Input: none
+         *Processing: calculate and display the the powers of two from 0 to 31
+         *Output: the powers of two from 0 to 31
+         */
+    
+        var baseNumber = 2;
+        var output = "";
+        for (var i = 0; i <= 31; i++) {
+            if (i == 31) {
+                output += Math.pow(baseNumber, i)
+            } else {
+            output += Math.pow(baseNumber, i) + ", "
+            }
+        }
+
+        document.getElementById('output').innerHTML = output;
+        }
+</script>
+<body>
+        <button type="button" onclick="powersOfTwo()">Show Powers of two </button>
+        <div id="output"></div>
+</body>
+</html>

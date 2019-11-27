@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wind Chill</title>
+    <script> 
+        function doInputOutput() {
+            /*Input: temperature and wind speed
+             *Processing: calculate wind Chill temperature
+             *Output: wind chill temperature
+             */ 
+            let temp = parseFloat(document.getElementById('tempInput').value);
+            let windSpeed = parseFloat(document.getElementById('windSpeedInput').value);
+
+            let windChillTemp = windChill(temp, windSpeed);
+            document.getElementById('outputDiv').innerHTML = windChillTemp;
+
+        }
+
+        function windChill(temp, windSpeed) {
+            let windChillTemp = 35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16);
+            return windChillTemp;
+        }
+    
+    </script>
+
+
+</head>
+<body>
+    <p>Temperature in Fahrenheit</p><input type="text" id="tempInput">
+    <p>Wind Speed</p><input type="text" id="windSpeedInput">
+    <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

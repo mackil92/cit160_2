@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script>
+/* Input: start, integer and divisor
+ * Processing:
+ * Output:
+ */
+function displayDivisors() {
+    let start = parseInt(document.getElementById('start').value);
+    let end = parseInt(document.getElementById('end').value);
+    let divisor = parseInt(document.getElementById('divisor').value);
+    let output = "";
+
+    for (i = start; i <= end; i++) {
+        if (i % divisor == 0) {
+        output += i + " ";
+        } else {
+            continue;
+        }
+    }
+
+    document.getElementById('output').innerHTML = output;
+}
+</script>
+</head>
+
+<body>
+Start: <input type="text" id="start" size="5"><br>
+End: <input type="text" id="end" size="5"><br>
+Divisor: <input type="text" id="divisor" size="5"><br>
+<button type="button" onclick="displayDivisors()">Click</button>
+<div id="output"></div>
+</body>
+</html>

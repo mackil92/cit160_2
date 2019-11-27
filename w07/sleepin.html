@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sleep in??</title>
+    <script>
+    function sleepIn() {
+        /*Input: day of week, month, and date from the computers clock.
+         *Processing: if weekdays and not holiday, don't sleep in. if weekend and on holiday sleep in.
+         *Output: message to tell user to get up or sleep in.
+         */
+
+         var now = new Date();
+         var month = now.getMonth();
+         var dayOfMonth = now.getDate();
+         var dayOfWeek = now.getDay();
+         
+
+         if ((month == 0 && dayOfMonth == 1)||(month == 6 && dayOfMonth == 4)||(month == 11 && dayOfMonth == 25)) {
+            document.getElementById('outputDiv').innerHTML = "Sleep in."
+         } else if (dayOfWeek == 6||dayOfWeek == 0) {
+            document.getElementById('outputDiv').innerHTML = "Sleep in."
+         } else {
+            document.getElementById('outputDiv').innerHTML = "Get up!"
+         }
+    }
+    </script>
+</head>
+<body>
+    Click the button to find out if you can sleep in. 
+    <button type="button" onclick="sleepIn()">FInd out</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

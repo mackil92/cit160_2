@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sumOfOdd() {
+        /*Input: an integer
+         *Processing: calculate sum of all odd numbers contained in the integer.
+         *Output: sum
+         */
+
+        //get the number from the user
+        let num = parseInt(document.getElementById('numInput').value);
+        let sum = 0;
+        
+        //loop to keep adding odd numbers to the sum until it is less than or equal to the number.
+        for (let i = 1; i <= num; i++) {
+            if (i % 2 == 1) {
+                sum += i; //add count if the number is odd
+            }
+            else { continue } //skip if the number is even 
+        }
+
+        //display the result
+        document.getElementById('outputDiv').innerHTML = sum;
+        }
+    </script>
+</head>
+<body>
+    Please enter an integer
+    <input type="text" id="numInput">
+    <button type="button" onclick="sumOfOdd()">get sum of odd</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+I learned a lot from the reading material this week. Although most of the programming languages that I am familiar with are very advanced and make it convenient for the programmer to write the code tell what the computer to do, it was interesting to learn that the computer itself only can perform a few basic operations like receiving input, displaying output, repeating operations, etc. The Fancy tools that programmers use now days such as JavaScript and C++ and so on are a result of years of repeated programming of the programmers in the past to create an easy-to-swallow language for the future generation.  
+
+I wrote a basic JavaScript program to move Robbie the Robot this week, and it was easy to understand. I was able to successfully instruct Robbie to move in the right direction. I would like to learn how to change the speed of the movement so Robbie can move faster next time.  
+
+A classmate named Matt Hummer on the discussion board knew how to create custom statements to make Robbie move with fewer lines of code, so I would like to know how to do that next time. That post was intriguing to me. 

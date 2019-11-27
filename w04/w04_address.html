@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Defining Table
+     *Input: adress information
+     *Processing: putting separate address information into one
+     *Output: the full address line in a pleasant format. 
+     */
+        function getAddress() {
+            //put user's address information into these variables.
+            let name = document.getElementById('userName').value;
+            let street = document.getElementById('userStreet').value;
+            let city = document.getElementById('userCity').value;
+            let state = document.getElementById('userState').value;
+            let zipCode = document.getElementById('userZipCode').value;
+            //put information together and create a string of full address and
+            //assign it to fullAddress
+            let fullAddress = name + "<br>" + street + "<br>" + city + ", " + state + " " + zipCode;
+            //display the result in div with id displayAddress
+            document.getElementById('displayAddress').innerHTML = fullAddress
+        }
+    </script>
+</head>
+<body>
+    <span>Name <input type="text" id="userName" size="16"></span>
+    <br>
+    <span>Street <input type="text" id="userStreet" size="16"></span>
+    <br>
+    <span>City <input type="text" id="userCity" size="8"></span>
+    <span>State <input type="text" id="userState" size="2"></span>
+    <span>Zip Code <input type="text" id="userZipCode"  size="6"></span>
+    <br>
+    <button type="button" onclick="getAddress()">Make Address</button>
+    <div id="displayAddress"></div>
+</body>
+</html>

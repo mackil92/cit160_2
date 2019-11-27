@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retail code</title>
+    <script>
+    function computeTotal() {
+    /*Input: Customer's subtotal
+     *Processing: Determine what day it is and substract 10% if the total is higher than 50 and today is TUesday or Wednesday. 
+     *Output: new total amount
+     */
+        var dayOfWeek = new Date().getDay();
+        let subtotal = parseFloat(document.getElementById('subtotal').value);
+
+        //apply the discount if over 50 and it is tuesday or wednesday
+        if (subtotal > 50 && (dayOfWeek == 2 ^ dayOfWeek == 3)) {
+            subtotal *= 0.9;
+            subtotal *= 1.06;
+        } else {
+            subtotal *=  1.06;
+        }
+    
+        //display the result
+        document.getElementById('output').innerHTML = subtotal;
+    }    
+    </script>
+</head>
+<body>
+    <input type="text" id="subtotal">
+    <button type="button" onclick="computeTotal()">calculate total</button>
+    <div id="output"></div>
+</body>
+</html>

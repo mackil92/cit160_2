@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foot Wear</title>
+    <script>
+    /*Inout: weather
+     *Process: select appropriate foot wear for the weather
+     *Output: name of foot wear
+     */
+    function chooseFootWear() {
+        //get eather from user and store it in variable called weather
+        let weather = document.getElementById('input').value;
+
+        //select foot wear depending on the weather
+        let footWear;
+        if (weather == 'hot') {
+            footWear = 'sandals';
+        } else if (weather == 'rain') {
+            footWear = 'galoshes';
+        } else if (weather == 'snow') {
+            footWear = 'boots';
+        } else {
+            footWear = 'shoes';
+        }
+
+        //display the result
+        document.getElementById('output').innerHTML = footWear;
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="input">
+    <button type="button" onclick="chooseFootWear()">Choose Foot Wear</button>
+    <div id="output"></div>
+</body>
+</html>

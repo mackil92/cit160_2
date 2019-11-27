@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Arithmetic</title>
+    <script>
+    /*Input: two numbers, mathmatical operator, and student's answer
+     *Process: compute and compare the answer with computer's answer, and slect feedback for when correct answer was given and when incorrect answer was givien
+     *Output: feedback
+     */
+    function simpleArithmetic() {
+        //collect and store numbers, operator, and student's answer into variable
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let operator = document.getElementById('operator').value;
+        let answer = parseFloat(document.getElementById('answer').value);
+        let feedback;
+        
+        //check what operator is used and match the calculation with the student's answer to select feedback
+        if (operator == '+') {
+            if (answer == (num1 + num2)) {
+                feedback = 'Correct! Good job!';
+            } else {
+                feedback = 'Incorrect! Try again!';
+            }
+        } else if (operator == '-') {
+            if (answer == (num1 - num2)) {
+                feedback = 'Correct! Good job!';
+            } else {
+                feedback = 'Incorrect! Try again!';
+            }
+        } else if (operator == '*') {
+            if (answer == (num1 * num2)) {
+                feedback = 'Correct! Good job!';
+            } else {
+                feedback = 'Incorrect! Try again!';
+            }
+        } else if (operator == '/') {
+            if (answer == (num1 / num2)) {
+                feedback = 'Correct! Good job!';
+            } else {
+                feedback = 'Incorrect! Try again!';
+            }
+        }
+
+        //display the result
+        document.getElementById('feedback').innerHTML = feedback;
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="operator">
+    <input type="text" id="num2">
+    =
+    <input type="text" id="answer">
+    <br/>
+    <button type="button" onclick="simpleArithmetic()">Check</button>
+    <div id="feedback"></div>   
+</body>
+</html>

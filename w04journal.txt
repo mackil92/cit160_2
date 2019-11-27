@@ -1,0 +1,5 @@
+This week, I enjoyed using JavaScript in html. It is nice to find out that most modern browsers support JavaScript and there was no need to install additional software on to the computer. I also learned how important it is to use good variable names. I can see it getting easily confusing if I am not organized enough. They all must be unique but must follow a pattern also. 
+
+While writing code for the assignments, I tried to be creative with comments. I notice I don't really like to use comments, because most of the time I know where things are, and I don't look at them. But I know this is very bad practice, because in a few days when I come back to the code, it can be hard to understand the structure. It is also necessary to have good comments in code when I am working with a team. 
+
+I was able to set up GitHub and surge after finding out about it on the discussion board, that was big help. I also enjoyed the post from Billy Estella. He used CSS styling to make the results look great. 

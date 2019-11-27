@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function doPayment() {
+            let principal = parseFloat(document.getElementById('principalInput').value);
+            let annualRate = parseFloat(document.getElementById('annualRateInput').value);
+            let years = parseFloat(document.getElementById('yearsInput').value);
+            let periodsPerYear = parseFloat(document.getElementById('periodsPerYearInput').value);
+
+            let payment = computePayment(principal, annualRate, years, periodsPerYear);
+
+            document.getElementById('outputDiv').innerHTML = payment;
+            
+        }
+        function doBalance() {
+            let principal = parseFloat(document.getElementById('principalInput').value);
+            let annualRate = parseFloat(document.getElementById('annualRateInput').value);
+            let years = parseFloat(document.getElementById('yearsInput').value);
+            let periodsPerYear = parseFloat(document.getElementById('periodsPerYearInput').value);
+            let numberOfPaymentPaidToDate = parseFloat(document.getElementById('numberOfPaymentPaidToDateInput').value);
+
+            let balance = computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate);
+
+            document.getElementById('outputDiv2').innerHTML = balance;
+
+        }
+        function computePayment(principal, annualRate, years, periodsPerYear) {
+            let payment = principal*annualRate/periodsPerYear/(1-Math.pow((1+annualRate/periodsPerYear), -years));
+
+            return payment;
+
+        }
+        function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+            let balance = principal*(Math.pow(1+annualRate/periodsPerYear), numberOfPaymentPaidToDate) - periodsPerYear*(Math.pow((1+annualRate/periodsPerYear), numberOfPaymentPaidToDate)-1)/(annualRate/periodsPerYear);
+            
+            return balance;
+        }
+    </script>
+</head>
+<body>
+        Amount borrowed (principal)<input type="text" id="principalInput"><br>
+        Annual interest rate (example: .065)<input type="text" id="annualRateInput"><br>
+        Number of years<input type="text" id="yearsInput"><br>
+        Payments per year<input type="text" id="periodsPerYearInput"><br>
+        <button type="button" onclick="doPayment()">Compute Payment</button>
+        <div id="outputDiv"></div>
+        Number of payments paid to date<input type="text" id="numberOfPaymentPaidToDateInput"><br>
+        <button type="button" onclick="doBalance()">Compute payoff amount</button>
+        <div id="outputDiv2"></div>
+    
+</body>
+</html>
